@@ -1,0 +1,44 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [
+		"env.d.ts", 
+		"src/**/*", 
+		"types/*.d.ts",
+		"src/**/*.vue",
+		"build/*.ts",
+		"build/**/*.ts"
+	],
+  "compilerOptions": {
+		"target": "esnext",
+    "module": "esnext",
+    "allowJs": true,
+		"allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "baseUrl": ".",
+		"lib": [
+      "dom",
+      "esnext"
+    ],
+    "types": [
+      "vite/client",
+      "element-plus/global"
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+
+	"exclude": [
+    "node_modules",
+    "dist"
+  ],
+
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ]
+}
