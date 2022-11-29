@@ -1,6 +1,6 @@
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import 'virtual:windi.css'
-import 'element-plus/dist/index.css'
+// import 'element-plus/dist/index.css'
 // iconfont图标库
 import './assets/iconfont/iconfont.css'
 import '@/styles/index.scss' // global css
