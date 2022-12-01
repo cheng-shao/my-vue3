@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 auto-imports.d.ts
 components.d.ts
+.eslint-auto-import.json

@@ -3,9 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   '@element-plus/icons-vue': ^2.0.10
   '@rushstack/eslint-patch': ^1.1.4
+  '@types/crypto-js': ^4.1.1
   '@types/js-cookie': ^3.0.2
   '@types/node': ^16.18.3
   '@types/nprogress': ^0.2.0
+  '@types/numeral': ^2.0.2
   '@types/path-browserify': ^1.0.0
   '@types/throttle-debounce': ^5.0.0
   '@vitejs/plugin-legacy': ^2.3.1
@@ -33,6 +35,7 @@ specifiers:
   normalize.css: ^8.0.1
   npm-run-all: ^4.1.5
   nprogress: ^0.2.0
+  numeral: ^2.0.6
   path-browserify: ^1.0.1
   pinia: ^2.0.23
   prettier: ^2.7.1
@@ -54,8 +57,6 @@ specifiers:
 
 dependencies:
   '@element-plus/icons-vue': 2.0.10_vue@3.2.45
-  '@types/js-cookie': 3.0.2
-  '@types/throttle-debounce': 5.0.0
   '@vueuse/components': 9.5.0_vue@3.2.45
   '@vueuse/core': 9.5.0_vue@3.2.45
   axios: 0.27.2
@@ -69,6 +70,7 @@ dependencies:
   moment: 2.29.4
   normalize.css: 8.0.1
   nprogress: 0.2.0
+  numeral: 2.0.6
   path-browserify: 1.0.1
   pinia: 2.0.23_e7lp6ggkpgyi5vqd44m2kxvk6i
   qs: 6.11.0
@@ -79,9 +81,13 @@ dependencies:
 
 devDependencies:
   '@rushstack/eslint-patch': 1.2.0
+  '@types/crypto-js': 4.1.1
+  '@types/js-cookie': 3.0.2
   '@types/node': 16.18.3
   '@types/nprogress': 0.2.0
+  '@types/numeral': 2.0.2
   '@types/path-browserify': 1.0.0
+  '@types/throttle-debounce': 5.0.0
   '@vitejs/plugin-legacy': 2.3.1_terser@5.15.1+vite@3.2.4
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
   '@vitejs/plugin-vue-jsx': 2.1.1_vite@3.2.4+vue@3.2.45
@@ -670,13 +676,17 @@ packages:
     dev: true
     optional: true
 
+  /@types/crypto-js/4.1.1:
+    resolution: {integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==}
+    dev: true
+
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
   /@types/js-cookie/3.0.2:
     resolution: {integrity: sha512-6+0ekgfusHftJNYpihfkMu8BWdeHs9EOJuGcSofErjstGPfPGEu9yTu4t460lTzzAMl2cM5zngQJqPMHbbnvYA==}
-    dev: false
+    dev: true
 
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
@@ -705,6 +715,10 @@ packages:
     resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
     dev: true
 
+  /@types/numeral/2.0.2:
+    resolution: {integrity: sha512-A8F30k2gYJ/6e07spSCPpkuZu79LCnkPTvqmIWQzNGcrzwFKpVOydG41lNt5wZXjSI149qjyzC2L1+F2PD/NUA==}
+    dev: true
+
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
@@ -720,7 +734,7 @@ packages:
 
   /@types/throttle-debounce/5.0.0:
     resolution: {integrity: sha512-Pb7k35iCGFcGPECoNE4DYp3Oyf2xcTd3FbFQxXUI9hEYKUl6YX+KLf7HrBmgVcD05nl50LIH6i+80js4iYmWbw==}
-    dev: false
+    dev: true
 
   /@types/web-bluetooth/0.0.16:
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
@@ -3222,6 +3236,10 @@ packages:
     dependencies:
       boolbase: 1.0.0
     dev: true
+
+  /numeral/2.0.6:
+    resolution: {integrity: sha512-qaKRmtYPZ5qdw4jWJD6bxEf1FJEqllJrwxCLIm0sQU/A7v2/czigzOb+C2uSiFsa9lBUzeH7M1oK+Q+OLxL3kA==}
+    dev: false
 
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
