@@ -1,57 +1,60 @@
 <template>
   <div class="xr-download">
     <div class="xr-download__header">
-      <img src="./download.png" class="download-img">
+      <img src="./download.png" class="download-img" />
     </div>
     <div class="xr-download__title">悟空移动办公平台</div>
     <div class="down-des">
       您可以通过悟空移动端，实现销售管理CRM、人资管理HRM、财务管理FS。全面支持安卓、IOS，无缝接入企业微信、钉钉。
     </div>
-    <flexbox
-      justify="center"
-      class="xr-download__body">
+    <flexbox justify="center" class="xr-download__body">
       <div v-for="(item, index) in list" :key="index" class="down-item">
-        <img :src="item.icon">
+        <img :src="item.icon" />
         <div>{{ item.label }}</div>
       </div>
     </flexbox>
 
     <div class="xr-download__footer">
-      <div class="logo"><i class="wk wk-icon-android" /><i class="wk wk-icon-ios" /></div>
+      <div class="logo">
+        <i class="wk wk-icon-android" />
+        <i class="wk wk-icon-ios" />
+      </div>
       <div>扫描二维码，下载Android、iPhone客户端</div>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'Download',
-  components: {
-  },
+  components: {},
   props: {},
   data() {
     return {
-      list: [{
-        icon: require('./crm.png'),
-        label: '客户管理CRM',
-        url: WKConfig.androidUrl
-      }, {
-        icon: require('./hrm.png'),
-        label: '人资管理HRM',
-        url: WKConfig.iOSUrl
-      }, {
-        icon: require('./fs.png'),
-        label: '财务管理FS',
-        url: WKConfig.winUrl
-      }]
+      list: [
+        {
+          icon: require('./crm.png'),
+          label: '客户管理CRM',
+          url: WKConfig.androidUrl
+        },
+        {
+          icon: require('./hrm.png'),
+          label: '人资管理HRM',
+          url: WKConfig.iOSUrl
+        },
+        {
+          icon: require('./fs.png'),
+          label: '财务管理FS',
+          url: WKConfig.winUrl
+        }
+      ]
     }
   },
   computed: {},
   watch: {},
   mounted() {},
 
-  beforeDestroy() {},
+  beforeUnmount() {},
   methods: {}
 }
 </script>

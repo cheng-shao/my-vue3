@@ -23,11 +23,15 @@
 </template>
 
 <script>
+import Verify from '@/components/Verify/index.vue'
+
 export default {
   // 滑动验证加倒计时按钮
   name: 'VerifyButton',
 
-  components: {},
+  components: {
+    Verify
+  },
 
   props: {
     disabled: Boolean

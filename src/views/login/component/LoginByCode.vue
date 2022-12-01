@@ -58,6 +58,8 @@ export default {
   // 验证码登录
   name: 'LoginByCode',
 
+  emits: ['toggle', 'update:username'],
+
   components: {
     ShowItem,
     VerifyButton

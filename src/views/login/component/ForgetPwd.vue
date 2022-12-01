@@ -80,6 +80,8 @@ export default {
   // 忘记密码
   name: 'ForgetPwd',
 
+  emits: ['toggle', 'update:username'],
+
   components: {
     ShowItem,
     VerifyButton,
@@ -255,6 +257,14 @@ export default {
           return false
         })
       }
+    },
+
+    /**
+     * @description: 清理验证按钮定时器
+     * @return {*}
+     */
+    clearTimer() {
+      this.$refs.verifyButton && this.$refs.verifyButton.resetTimer()
     },
 
     /**

@@ -52,6 +52,8 @@
 </template>
 
 <script>
+import { systemUserInfoAPI } from '@/api/common'
+
 export default {
   // 弹窗详情
   name: 'XrUserView',
@@ -76,9 +78,11 @@ export default {
       }
       return ''
     },
+
     dataSrc() {
       return this.userData ? this.userData.img : this.src
     },
+
     userData() {
       return this.userInfo || this.data || {}
     }
@@ -96,6 +100,7 @@ export default {
   },
   mounted() {},
 
+  beforeUnmount() {},
   methods: {
     getUserData() {
       systemUserInfoAPI({

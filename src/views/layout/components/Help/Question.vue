@@ -30,7 +30,7 @@
           :key="index"
           :name="item.id"
         >
-          <template v-slot:title>
+          <template #title>
             <i class="wk wk-icon-success" /> {{ item.name }}
           </template>
           <div class="item-content" v-html="getContent(item.content)" />

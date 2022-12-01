@@ -1,5 +1,7 @@
 <template>
-  <div :style="style" class="vux-flexbox-item">
+  <div
+    :style="style"
+    class="vux-flexbox-item">
     <slot />
   </div>
 </template>
@@ -30,9 +32,8 @@ export default {
 
       if (this.span) {
         for (let i = 0; i < prefixList.length; i++) {
-          styles[`${prefixList[i]}flex`] = `0 0 ${
-            this.buildWidth(this.span) * 100
-          }%`
+          styles[`${prefixList[i]}flex`] = `0 0 ${this.buildWidth(this.span) *
+            100}%`
         }
       }
       if (typeof this.order !== 'undefined') {

@@ -1,5 +1,3 @@
- // 组件内部封装的axios
-
 // 获取验证图片  以及token
 export function reqGet(data) {
   return request({
@@ -23,4 +21,3 @@ export function reqCheck(data) {
     }
   })
 }
-

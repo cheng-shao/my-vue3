@@ -31,12 +31,12 @@
           </div>
         </div>
         <template #reference>
-          <!-- <el-button class="more" type="bg-icon" circle> -->
           <el-button class="more" circle>
             <i class="wk wk-grid" />
           </el-button>
         </template>
       </el-popover>
+      <!-- <el-button class="more" type="bg-icon" circle> -->
       <img :key="getLogo" v-src="getLogo" class="logo" @click="enterMainPage" />
       <div v-if="title" class="title">{{ title }}</div>
       <div class="menus">
@@ -55,13 +55,14 @@
             <!-- <i :style="{ fontSize: item.fontSize }" :class="item.icon" /> -->
             <template #label>
               <router-link class="router-link" :to="{ path: item.fullPath }">
-                <span class="label">{{ item.label }}</span> </router-link
-              ><span
+                <span class="label">{{ item.label }}</span>
+              </router-link>
+              <span
                 v-if="item.num"
                 type="primary"
                 class="el-badge__content el-badge__content--undefined"
-                >{{ item.num }}</span
-              >
+                >{{ item.num }}
+              </span>
             </template>
           </el-tab-pane>
         </el-tabs>
@@ -211,15 +212,6 @@ const emitter = mitt()
 
 export default {
   emits: ['select'],
-  filters: {
-    langName: function (value) {
-      if (value) {
-        return { cn: '中文', en: 'English' }[value]
-      } else {
-        return '中文'
-      }
-    }
-  },
   components: {
     // Messages,
     HelpSide,
@@ -433,9 +425,18 @@ export default {
   },
   methods: {
     ...mapActions(useUserStore, ['LogOut']),
+
     navItemsClick(tab) {
       const menu = this.menus[parseInt(tab.index)]
       this.$router.push(menu.fullPath)
+    },
+
+    langName: function (value) {
+      if (value) {
+        return { cn: '中文', en: 'English' }[value]
+      } else {
+        return '中文'
+      }
     },
 
     /**

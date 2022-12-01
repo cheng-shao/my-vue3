@@ -3,8 +3,8 @@
     <el-popover
       v-if="id"
       :key="src"
-      :visible="popoverShow"
-      :show-arrow="false"
+      v-model:visible="popoverShow"
+      :visible-arrow="false"
       :trigger="trigger"
       :disabled="popoverDisabled"
       class="xr-avatar"
@@ -12,10 +12,13 @@
       width="250"
       popper-class="no-padding-popover"
     >
-      <div v-loading="loading">
-        <xr-user-view :data="userData" :src="imageCache[src] || defaultHead" />
-      </div>
-
+      <!-- <div v-loading="loading"> -->
+      <xr-user-view
+        v-loading="loading"
+        :data="userData"
+        :src="imageCache[src] || defaultHead"
+      />
+      <!-- </div> -->
       <template #reference>
         <el-avatar
           :key="src"
@@ -31,7 +34,7 @@
 
     <el-popover
       v-else-if="previewType && !disabled"
-      :key="id"
+      :key="src + 'two'"
       placement="bottom"
       class="xr-avatar"
       width="196px"
@@ -124,10 +127,8 @@ export default {
     }
   },
   computed: {
-    ...mapState(useAppStore, ['getImageCache']),
-    imageCache() {
-      return this.getImageCache
-    },
+    ...mapState(useAppStore, ['imageCache']),
+
     fontSize() {
       if (this.size <= 30) {
         return '12px'
@@ -165,13 +166,13 @@ export default {
   beforeUnmount() {},
   methods: {
     ...mapActions(useAppStore, ['SET_IMAGECACHE']),
+
     handleImage() {
       if (this.src) {
         if (!this.imageCache.hasOwnProperty(this.src)) {
           this.$set(this.imageCache, this.src, '')
           this.SET_IMAGECACHE(this.imageCache)
           if (this.src.startsWith('data:')) return
-
           getImageData(this.src)
             .then((data) => {
               this.$set(this.imageCache, this.src, data.src)

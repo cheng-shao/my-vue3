@@ -19,9 +19,11 @@
   </transition>
 </template>
 <script type="text/javascript">
-const emitter = mitt()
+import { getMaxIndex } from '@/utils/index'
+
 export default {
   name: 'SlideView', // 客户管理详情 滑动view
+  emits: ['afterEnter', 'close'],
   componentName: 'SlideView',
   components: {},
   props: {
@@ -74,7 +76,7 @@ export default {
   computed: {},
   watch: {},
   created() {
-    emitter.$on('setEditClose', (value) => {
+    this.$on('setEditClose', (value) => {
       this.isEditClose = value
     })
   },

@@ -1,6 +1,6 @@
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import 'virtual:windi.css'
-// import 'element-plus/dist/index.css'
+import 'element-plus/dist/index.css'
 // iconfont图标库
 import './assets/iconfont/iconfont.css'
 import '@/styles/index.scss' // global css
@@ -8,9 +8,9 @@ import '@/styles/index.scss' // global css
 import App from './App.vue'
 
 import { installPluginsMethodsComponents } from './init'
+import { handleError } from './init/error'
 import { setupGlobDirectives } from '@/directives'
 
-import { setupStore } from './store'
 import { setupRouter, router } from './router'
 import { setupRouterGuard } from '@/router/guard'
 
@@ -31,6 +31,8 @@ function initApp() {
 
   // 注册全局指令 app
   setupGlobDirectives()
+
+  handleError(app)
 
   app.mount('#app')
 }

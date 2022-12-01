@@ -36,16 +36,18 @@
 
           <el-dropdown trigger="click" @command="handleCommand">
             <el-button class="dropdown-btn" icon="el-icon-more" />
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item command="read">{{
-                `全部${
-                  currentMenu.label == 'all' ? '' : currentMenu.name
-                }标记为已读`
-              }}</el-dropdown-item>
-              <el-dropdown-item command="delete">{{
-                `删除${currentMenu.name}已读消息`
-              }}</el-dropdown-item>
-            </el-dropdown-menu>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item command="read">{{
+                  `全部${
+                    currentMenu.label == 'all' ? '' : currentMenu.name
+                  }标记为已读`
+                }}</el-dropdown-item>
+                <el-dropdown-item command="delete">{{
+                  `删除${currentMenu.name}已读消息`
+                }}</el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
           </el-dropdown>
         </div>
       </div>
@@ -126,9 +128,12 @@ export default {
     // NewDialog,
     MessageCell,
     TodayListDetail,
-    CRMFullScreenDetail: () => import('@/components/CRMFullScreenDetail'),
-    JXCFullScreenDetail: () =>
-      import('@/views/jxc/components/JXCFullScreenDetail')
+    CRMFullScreenDetail: defineAsyncComponent(() =>
+      import('@/components/CRMFullScreenDetail.vue')
+    ),
+    JXCFullScreenDetail: defineAsyncComponent(() =>
+      import('@/views/jxc/components/JXCFullScreenDetail.vue')
+    )
   },
   props: {
     // 仅公告

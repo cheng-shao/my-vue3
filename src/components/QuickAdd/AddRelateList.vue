@@ -1,22 +1,19 @@
 <template>
-  <section
-    class="c-cont">
+  <section class="c-cont">
     <flexbox class="c-header">
       <i :class="['wk', `wk-${type}`]" />
       <div class="c-name">{{ typeName }}</div>
     </flexbox>
     <div class="c-body">
       <flexbox wrap="wrap">
-        <flexbox
-          v-for="(item, index) in data"
-          :key="index"
-          class="c-item">
+        <flexbox v-for="(item, index) in data" :key="index" class="c-item">
           <div class="c-item-name">{{ getItemName(item) }}</div>
           <el-button
             icon="el-icon-close"
             type="icon"
             class="close-button"
-            @click="deleteItem(item, index)" />
+            @click="deleteItem(item, index)"
+          />
         </flexbox>
       </flexbox>
     </div>
@@ -45,8 +42,7 @@ export default {
     label: String
   },
   data() {
-    return {
-    }
+    return {}
   },
   computed: {
     typeName() {
@@ -65,7 +61,7 @@ export default {
   watch: {},
   mounted() {},
 
-  beforeDestroy() {},
+  beforeUnmount() {},
   methods: {
     getItemName(data) {
       const key = {

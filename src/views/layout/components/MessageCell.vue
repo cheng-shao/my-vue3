@@ -48,7 +48,7 @@
     </div>
 
     <div class="message-cell__ft">
-      <div>{{ data.createTime | formatTime }}</div>
+      <div>{{ formatTime(data.createTime) }}</div>
       <flexbox justify="end">
         <el-tooltip
           effect="dark"

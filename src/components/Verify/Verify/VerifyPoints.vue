@@ -76,9 +76,9 @@ import {
   _code_chars,
   _code_color1,
   _code_color2
-} from '../utils/util'
-import { aesEncrypt } from '../utils/ase'
-import { reqGet, reqCheck } from '../api/index'
+} from './../utils/util'
+import { aesEncrypt } from './../utils/ase'
+import { reqGet, reqCheck } from './../api/index'
 
 export default {
   name: 'VerifyPoints',

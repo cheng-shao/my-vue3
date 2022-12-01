@@ -73,9 +73,10 @@ import ShowItem from './ShowItem.vue'
 import LoginMixin from './LoginMixin'
 
 export default {
-  emits: ['editClick', 'update:username'],
   // 密码登录
   name: 'LoginByPwd',
+
+  emits: ['toggle', 'update:username'],
 
   components: {
     ShowItem
@@ -193,6 +194,7 @@ export default {
 
   methods: {
     ...mapActions(useUserStore, ['Login']),
+
     getProps() {
       const { passwordInput } = this.$refs
       const propField = ['username']

@@ -5,19 +5,17 @@
       <div class="f-name">附件</div>
     </flexbox>
     <div class="f-body">
-      <flexbox
-        v-for="(item, index) in data"
-        :key="index"
-        class="f-item">
-        <img
-          :src="item.icon"
-          class="f-img">
-        <div class="f-name">{{ item.name }}<span class="f-size">{{ `（${item.size}）` }}</span></div>
+      <flexbox v-for="(item, index) in data" :key="index" class="f-item">
+        <img :src="item.icon" class="f-img" />
+        <div class="f-name">
+          {{ item.name }}<span class="f-size">{{ `（${item.size}）` }}</span>
+        </div>
         <el-button
           icon="wk wk-s-delete"
           type="icon"
           class="close-button"
-          @click="deleteItem(item, index)" />
+          @click="deleteItem(item, index)"
+        />
       </flexbox>
     </div>
     <el-button type="text" @click="deleteAll">全部删除</el-button>
@@ -25,7 +23,6 @@
 </template>
 
 <script>
-
 export default {
   // 添加附件展示
   name: 'AddFileList',
@@ -40,7 +37,7 @@ export default {
   watch: {},
   mounted() {},
 
-  beforeDestroy() {},
+  beforeUnmount() {},
   methods: {
     deleteItem(item, index) {
       this.$emit('delete', item, index)

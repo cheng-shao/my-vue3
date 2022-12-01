@@ -289,7 +289,6 @@ export const usePermissionStore = defineStore({
       return new Promise((resolve) => {
         // 路由完善
         perfectRouter(data, (routers) => {
-          console.log('set routers', routers)
           // commit('SET_ROUTERS', routers)
           this.SET_ROUTERS(routers)
           resolve('')

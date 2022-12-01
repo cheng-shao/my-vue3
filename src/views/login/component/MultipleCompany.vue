@@ -27,6 +27,8 @@ export default {
   // 多企业
   name: 'MultipleCompany',
 
+  emits: ['toggle'],
+
   components: {
     MultipleCompanySelect
   },
